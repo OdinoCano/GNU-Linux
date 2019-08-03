@@ -93,3 +93,7 @@ guardar el progreso (si es posible) y cerrar antes de que el sistema mate el pro
 
 SIGXFSZ: los sistemas de archivos tienen un límite en cuanto al tamaño de un archivo. Cuando un programa intenta violar este límite, el sistema enviará a ese proceso la señal 
 SIGXFSZ.
+
+
+MATA PROCESO ZOMBIE
+kill $(ps -A -o stat,ppid | awk '/[zZ]/{print $2}')
