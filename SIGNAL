@@ -1,0 +1,95 @@
+Descripciones de señal
+NOTA: Esto está ordenado alfabéticamente.
+
+SIGABRT: esta señal de interrupción es la señal de cancelación. Normalmente, un proceso iniciará esta señal de eliminación en sí mismo.
+
+SIGALRM: SIGALRM se envía cuando expira el temporizador en tiempo real o en tiempo de reloj.
+
+SIGBUS: cuando un proceso envía la señal SIGBUS, se debe a que el proceso causó un error de bus. Comúnmente, estos errores del bus se deben a un proceso que intenta utilizar 
+direcciones físicas falsas o el proceso tiene su alineación de memoria configurada incorrectamente.
+
+SIGCHLD: cuando un proceso padre pierde su proceso hijo, el proceso padre recibe la señal SIGCHLD. Esto limpia los recursos utilizados por el proceso secundario. En las 
+computadoras, un proceso secundario es un proceso iniciado por otro proceso conocido como padre.
+
+SIGCONT: para que los procesos continúen ejecutándose después de haber sido pausados ​​por la señal SIGTSTP o SIGSTOP, envíe la señal SIGCONT al proceso pausado. Este es el S
+IGnal CONTINUO. Esta señal es beneficiosa para el control de trabajos Unix (ejecutar tareas en segundo plano).
+
+SIGEMT: los procesos reciben esta señal cuando se produce una captura de emulador.
+
+SIGFPE: los procesos que se dividen por cero se eliminan utilizando SIGFPE. Imagínese si los humanos recibieran la pena de muerte por esas matemáticas. NOTA: El autor de este 
+artículo fue llevado recientemente a la calle y fusilado para dividirlo por cero.
+
+SIGHUP: la señal SIGHUP desconecta un proceso del proceso principal. Esto también se puede utilizar para reiniciar procesos. Por ejemplo, "killall -SIGHUP compiz" reiniciará 
+Compiz. Esto es útil para demonios con pérdidas de memoria.
+
+SIGILL: cuando un proceso realiza una función defectuosa, prohibida o desconocida, el sistema envía la señal SIGILL al proceso. Este es el "ILLegal SIGnal".
+
+SIGINFO: los terminales a veces pueden enviar solicitudes de estado a los procesos. Cuando esto sucede, los procesos también recibirán esta señal.
+
+SIGINT: esta señal es lo mismo que presionar ctrl-c. En algunos sistemas, "delete" + "break" envía la misma señal al proceso. El proceso se interrumpe y se detiene. Sin embargo,
+el proceso puede ignorar esta señal.
+
+SIGIO - Un alias a SIGPOLL.
+
+SIGIOT - Este es un alias para SIGABRT.
+
+SIGKILL: la señal SIGKILL hace que el proceso deje de ejecutarse inmediatamente. El programa no puede ignorar esta señal. Este proceso tampoco llega a la limpieza.
+
+SIGLOST - Los procesos que intentan acceder a archivos bloqueados obtendrán esta señal. Muchos sistemas usan SIGLOST como un alias para SIGPOLL, especialmente porque acceder a 
+archivos bloqueados es un evento de E / S asíncrono.
+
+SIGPIPE: cuando un proceso intenta escribir en una tubería que carece de un extremo conectado a un lector, esta señal se envía al proceso. Un lector es un proceso que lee datos 
+al final de una tubería.
+
+SIGPOLL: cuando un proceso provoca un evento de E / S asíncrono, ese proceso recibe la señal SIGPOLL. SIGPOLL y SIGIO son alias. En el código fuente del ensamblado, SIGIO se 
+define como "29" y SIGPOLL se define como "SIGIO".
+
+SIGPROF: SIGPROF se envía cuando transcurre el tiempo de CPU utilizado por el proceso y por el sistema en nombre del proceso.
+
+SIGPWR: los fallos de alimentación provocarán que el sistema envíe esta señal a los procesos (si el sistema todavía está encendido).
+
+SIGQUIT: es como SIGINT con la capacidad de hacer que el proceso produzca un volcado de núcleo.
+
+SIGRTMAX *: este es un conjunto de señales que varía entre los sistemas. Están etiquetados SIGRTMAX-1, SIGRTMAX-2, SIGRTMAX-3, ....... y así sucesivamente (generalmente hasta 
+14). Estas son señales definidas por el usuario; deben estar programados en el código fuente del kernel de Linux. Eso requeriría que el usuario conozca C / C ++.
+
+SIGRTMIN *: este es un conjunto de señales que varía entre sistemas. Están etiquetados SIGRTMIN + 1, SIGRTMIN + 2, SIGRTMIN + 3, ....... y así sucesivamente (generalmente hasta 
+15). Estas son señales definidas por el usuario; deben estar programados en el código fuente del kernel de Linux. Eso requeriría que el usuario conozca C / C ++.
+
+SIGSEGV: cuando una aplicación tiene una violación de segmentación, esta señal se envía al proceso.
+
+SIGSTOP: esta señal hace que el sistema operativo pause la ejecución de un proceso. El proceso no puede ignorar la señal.
+
+SIGSYS: los procesos que dan a una llamada del sistema un parámetro no válido recibirán esta señal.
+
+SIGTERM: esta señal solicita un proceso para detener la ejecución. Esta señal puede ser ignorada. El proceso tiene tiempo para apagarse con gracia. Cuando un programa se cierra 
+con gracia, eso significa que se le da tiempo para guardar su progreso y liberar recursos. En otras palabras, no está obligado a detenerse. SIGINT es muy similar a SIGTERM.
+
+SIGTRAP: esta señal se utiliza para fines de depuración. Cuando un proceso ha realizado una acción o se cumple una condición que un depurador está esperando, esta señal se 
+enviará al proceso.
+
+SIGTSTP: esta señal es como presionar ctrl-z. Esto hace una solicitud al terminal que contiene el proceso para pedirle que se detenga temporalmente. El proceso puede ignorar la 
+solicitud.
+
+SIGTTIN: cuando un proceso intenta leer desde un tty (terminal de computadora), el proceso recibe esta señal.
+
+SIGTTOU: cuando un proceso intenta escribir desde un tty (terminal de computadora), el proceso recibe esta señal.
+
+SIGUNUSED: en muchos sistemas, este es un alias para SIGSYS.
+
+SIGURG: cuando un proceso tiene datos urgentes para leer o los datos son muy grandes, la señal SIGURG se envía al proceso.
+
+SIGUSR1 - Esto indica una condición definida por el usuario. El usuario puede establecer esta señal programando los comandos en sigusr1.c. Esto requiere que el programador sepa 
+C / C ++.
+
+SIGUSR2: indica una condición definida por el usuario.
+
+SIGVTALRM: SIGVTALRM se envía cuando transcurre el tiempo de CPU utilizado por el proceso.
+
+SIGWINCH: cuando un proceso se encuentra en un terminal que cambia su tamaño, el proceso recibe esta señal.
+
+SIGXCPU: cuando un proceso usa la CPU más allá del tiempo asignado, el sistema envía al proceso esta señal. SIGXCPU actúa como una advertencia; el proceso tiene tiempo para 
+guardar el progreso (si es posible) y cerrar antes de que el sistema mate el proceso con SIGKILL.
+
+SIGXFSZ: los sistemas de archivos tienen un límite en cuanto al tamaño de un archivo. Cuando un programa intenta violar este límite, el sistema enviará a ese proceso la señal 
+SIGXFSZ.
